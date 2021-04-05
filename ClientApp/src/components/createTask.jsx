@@ -38,13 +38,13 @@ class CreateTask extends Component{
     render() {
         return (
             <div style={{ width: '50%'}}>
-          
-                <Paper style={{ padding: 16, display:'flex', 'flexDirection': 'column', height: '100%' }}>
+
+                <Paper style={{ padding: '4em', display: 'flex', 'flexDirection': 'column', height: '100%', 'justifyContent': 'end', 'alignItems':'flex-start' }}>
                     <h1>Task App</h1>
-                    <Box style={{ 'width':'90%', 'margin':'0 auto'}}>
+                    <Box style={{ 'width':'90%'}}>
                     <form onSubmit={this.props.action} >
                         <Grid container alignItems="center" spacing={2}>
-                            <Grid item xs={8}>
+                            <Grid item xs={12}>
                                 <FormControl>
                                     <InputLabel htmlFor="task-input">Type in a new task</InputLabel>
                                     <Input id="task-input" type="text" name="text" value={this.state.text} onChange={this.onChange} required />
