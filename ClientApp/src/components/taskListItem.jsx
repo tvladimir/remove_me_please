@@ -6,13 +6,13 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 
 function TaskListItem(props) {
-    const { id, text, fileExtension } = props.task;
+    const { id, text, imageName, imageExtension } = props.task;
 
         return (
         <div>
                 <ListItem style={{ 'flexDirection': 'row-reverse'}} key={props.task.id} button>
                             <ListItemAvatar>
-                        <img src={`${apiUrl}/image/${id}${fileExtension}`} width="40" />
+                        <img src={`${apiUrl}/image/${imageName}${imageExtension}`} width="40" />
                             </ListItemAvatar>
                     <ListItemText id={id} primary={text} />
                       

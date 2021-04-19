@@ -9,6 +9,7 @@ namespace Project1.Models.DomainModels
     {
         public Guid Id { get; set; }
         public string Text { get; set; }
-        public string FileExtension { get; set; }
+        public string ImageName { get; set; }
+        public string ImageExtension { get; set; }
     }
 }

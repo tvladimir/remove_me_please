@@ -17,10 +17,8 @@ class CreateTask extends Component{
      async onFormSubmit(e) {
         e.preventDefault()
         const { file, text } = this.state;
-        const stcheck = await taskService.createTask(file, text);
-        this.props.handleStateChange();
-
-
+        await taskService.createTask(file, text);
+        await this.props.handleStateChange();
     }
 
     onChange(e){

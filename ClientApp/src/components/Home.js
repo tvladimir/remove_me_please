@@ -13,8 +13,6 @@ export class Home extends Component {
         this.state = {
             tasks: [],
         }
-        this.handleStateChange = this.handleStateChange.bind(this);
-        this.handleServerUpdate = this.handleServerUpdate.bind(this);
   
     }
     async handleStateChange() {

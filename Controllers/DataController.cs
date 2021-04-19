@@ -29,11 +29,11 @@ namespace Project1.Controllers
 
         [HttpPost, DisableRequestSizeLimit]
         [Route("saveNew")]
-        public async Task<bool> SaveNew()
+        public bool SaveNew()
         {
             var file = Request.Form.Files[0];
             string text = Request.Form["text"];
-            return await dataManager.SaveAsync(Request.Form["text"], file);
+            return dataManager.SaveNew(Request.Form["text"], file);
         }
 
         [HttpGet]

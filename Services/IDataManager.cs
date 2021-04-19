@@ -10,6 +10,6 @@ namespace Project1.Services
     public interface IDataManager
     {
         Task<List<DataItem>> GetDataItems();
-        Task<bool> SaveAsync(string text, IFormFile file);
+        bool SaveNew(string text, IFormFile file);
     }
 }
