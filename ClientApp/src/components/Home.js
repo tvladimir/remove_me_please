@@ -13,6 +13,9 @@ export class Home extends Component {
         this.state = {
             tasks: [],
         }
+
+        this.handleStateChange = this.handleStateChange.bind(this);
+        this.handleServerUpdate = this.handleServerUpdate.bind(this);
   
     }
     async handleStateChange() {
@@ -23,6 +26,7 @@ export class Home extends Component {
                 this.setState({ tasks: data });
             }
         } catch (err) {
+            console.log(err);
             if (err.response && err.response.status === 401) {
                 this.setState({ errors: { cards: "No tasks to show you my" } });
             }

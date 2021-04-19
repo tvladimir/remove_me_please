@@ -93,7 +93,7 @@ namespace Project1.Services
 
                 file.CopyTo(fileStream);
 
-                Bitmap bitmap = new Bitmap(Path.Combine(filesDirectory, tempFileName));
+                Bitmap bitmap = new Bitmap(Path.Combine(basePath, tempFileName));
 
                     if(bitmap.Width > imageSize || bitmap.Height > imageSize)
                     {
@@ -103,11 +103,11 @@ namespace Project1.Services
                         int resultWidth = ((int)(bitmap.Width / index));
                         int resultHeight = ((int)(bitmap.Height / index));
                         Bitmap bitmapResult = (Bitmap)bitmap.GetThumbnailImage(resultWidth, resultHeight, null, IntPtr.Zero);
-                        bitmapResult.Save(Path.Combine(filesDirectory, $"{fileName}{fileExtension}"), fileTypes[fileExtension]);
+                        bitmapResult.Save(Path.Combine(basePath, $"{fileName}{fileExtension}"), fileTypes[fileExtension]);
                     }
                     else
                     {
-                        bitmap.Save(Path.Combine(filesDirectory, $"{fileName}{fileExtension}"), fileTypes[fileExtension]);
+                        bitmap.Save(Path.Combine(basePath, $"{fileName}{fileExtension}"), fileTypes[fileExtension]);
                     }
             });
             task.Start();
